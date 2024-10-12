@@ -5,6 +5,7 @@ import { GiKnifeFork } from "react-icons/gi";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { RxPerson } from "react-icons/rx";
 import Button from "../UI/Button";
+import { useRouter } from "next/navigation";
 
 const HeroData = [
   {
@@ -22,6 +23,7 @@ const HeroData = [
 ];
 
 const Slider = () => {
+  const router = useRouter()
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFading, setIsFading] = useState(true);
 
@@ -48,9 +50,8 @@ const Slider = () => {
     <div className="relative h-[350px] lg:h-[400px] flex items-center justify-center overflow-hidden">
       {/* Background Image Container */}
       <div
-        className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out ${
-          isFading ? "opacity-100" : "opacity-30"
-        }`}
+        className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out ${isFading ? "opacity-100" : "opacity-30"
+          }`}
         style={{ backgroundImage: `url(${images[currentIndex]})` }}
       >
         {/* Overlay Layer */}
@@ -70,7 +71,7 @@ const Slider = () => {
             </div>
           ))}
         </div>
-        <div className="max-w-max sm:mt-5 2xl:mt-0 w-full mx-auto">
+        <div onClick={() => (router.push('/services'))} className="max-w-max sm:mt-5 2xl:mt-0 w-full mx-auto">
           <Button className="px-6 py-3 2xl:px-9 2xl:py-5 text-white font-semibold transition-all duration-200 hover:scale-105 cursor-pointer  bg-[#fc7344] rounded-[5px]">
             <span>View Services</span>
           </Button>

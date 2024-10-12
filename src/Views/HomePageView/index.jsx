@@ -1,9 +1,11 @@
 import React from "react";
 import AboutTeam from "./AboutTeam";
 import DeliveryPartner from "./DeliveryPartnerView/DeliveryPartner";
-import ContactUs from "./ContactUs";
+
 // import HomeSwiper from "../../Components/Sliders/HomeSwiper";
 import Slider from "../../Components/Sliders/HomeSwiper";
+import ContactUs from "@/Components/Shared/ContactUs";
+
 
 const Home = () => {
   return (

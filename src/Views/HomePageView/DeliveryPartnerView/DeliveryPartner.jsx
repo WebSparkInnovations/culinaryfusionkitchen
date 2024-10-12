@@ -1,9 +1,13 @@
+'use client'
 import React from "react";
 import FoodCard from "../../../Components/UI/FoodCard";
 import { FoodData } from "../../../Data/Data";
 import Button from "../../../Components/UI/Button";
+import { useRouter } from "next/navigation";
+
 
 const DeliveryPartner = () => {
+  const router = useRouter()
   return (
     <div className="container">
       <div className="py-14 flex  flex-col gap-10">
@@ -20,7 +24,7 @@ const DeliveryPartner = () => {
         <div className="w-full flex  flex-wrap  py-5 justify-center gap-10">
           <FoodCard data={FoodData} />
         </div>
-        <div className="max-w-max w-full mx-auto">
+        <div onClick={() => (router.push('/services'))} className="max-w-max w-full mx-auto">
           <Button className="px-10 py-5 text-white font-semibold transition-all duration-200 hover:scale-105 cursor-pointer  bg-[#fc7344] rounded-[5px]">
             <span>See all our services</span>
           </Button>

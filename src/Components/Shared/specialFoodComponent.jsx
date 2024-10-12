@@ -1,13 +1,15 @@
+
 import React from "react";
 
 const SpecialFoodComponent = ({ data }) => {
+
   return (
     <>
       {data.map((ls, index) => ( // Added index parameter
         <div key={index} className="flex flex-col gap-10">
           <div className="flex flex-col gap-10">
             <div
-              className="h-[280px] 2xl:h-[350px] bg-cover bg-center"
+              className="h-[280px] 2xl:h-[380px] bg-cover bg-center"
               style={{ backgroundImage: `url(${ls.img})` }}
             >
               <div className="relative w-full h-full bg-black/40 flex items-center justify-center">
@@ -19,13 +21,14 @@ const SpecialFoodComponent = ({ data }) => {
                 </div>
               </div>
             </div>
+
             <div className="flex flex-col px-5 2xl:px-10 mx-auto w-full gap-5">
-              <h1 className="text-[24px] xl:text-[32px] text-center font-semibold">
+              {ls.heading && (<h1 className="text-[24px] xl:text-[32px] text-center font-semibold">
                 {ls.heading} {/* Changed from data.heading to ls.heading */}
-              </h1>
-              <p className="text-[14px] md:text-[16px] 2xl:text-[18px] text-center text-[#808080]">
+              </h1>)}
+              {ls.description && (<p className="text-[14px] md:text-[16px] 2xl:text-[18px] text-center text-[#808080]">
                 {ls.description} {/* Changed from data.description to ls.description */}
-              </p>
+              </p>)}
             </div>
           </div>
         </div>
