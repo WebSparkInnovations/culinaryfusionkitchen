@@ -130,9 +130,8 @@ const Navbar = () => {
 
       {/* Overlay - Opens and closes with the sidebar */}
       <div
-        className={`fixed inset-0 bg-black transition-opacity duration-500 ${
-          nav ? "opacity-50 z-40" : "opacity-0 pointer-events-none"
-        }`}
+        className={`fixed inset-0 bg-black transition-opacity duration-500 ${nav ? "opacity-50 z-40" : "opacity-0 pointer-events-none"
+          }`}
         onClick={() => setNav(false)} // Closes the sidebar when the overlay is clicked
       ></div>
       <div
@@ -174,9 +173,8 @@ const Navbar = () => {
 
       {/* Overlay - Opens and closes with the sidebar */}
       <div
-        className={`fixed inset-0 bg-black transition-opacity duration-300 ${
-          nav ? "opacity-10 z-40" : "opacity-0 pointer-events-none"
-        }`}
+        className={`fixed inset-0 bg-black transition-opacity duration-300 ${nav ? "opacity-10 z-40" : "opacity-0 pointer-events-none"
+          }`}
         onClick={() => setNav(false)} // Closes the sidebar when the overlay is clicked
       ></div>
     </nav>
