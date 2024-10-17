@@ -9,15 +9,15 @@ import { useRouter } from "next/navigation";
 
 const HeroData = [
   {
-    icon: <GiKnifeFork className="text-[#fe4a51] w-5 h-5 2xl:w-7 2xl:h-7" />,
+    icon: <GiKnifeFork className="text-[#fe4a51] w-4 h-4 2xl:w-6 2xl:h-6" />,
     text: "Philadelphia",
   },
   {
-    icon: <AiOutlineClockCircle className="text-[#fe4a51] w-5 h-5 2xl:w-7 2xl:h-7" />,
+    icon: <AiOutlineClockCircle className="text-[#fe4a51] w-4 h-4 2xl:w-6 2xl:h-6" />,
     text: "Philadelphia",
   },
   {
-    icon: <RxPerson className="text-[#fe4a51] w-5 h-5 2xl:w-7 2xl:h-7" />,
+    icon: <RxPerson className="text-[#fe4a51] w-4 h-4 2xl:w-6 2xl:h-6" />,
     text: "Philadelphia",
   },
 ];
@@ -60,20 +60,20 @@ const Slider = () => {
 
       {/* Static Content on the Slide */}
       <div className="relative flex flex-col justify-between max-w-[700px] w-full gap-7 2xl:gap-10  text-center text-white z-10">
-        <h1 className=" text-[32px] md:text-[44px] 2xl:text-[65px] font-bold uppercase">
+        <h1 className=" text-[30px] md:text-[38px] lg:text-[44px] 2xl:text-[55px] font-bold uppercase">
           Culinary Fusion Kitchen
         </h1>
         <div className="flex gap-5 sm:gap-14 max-w-[300px] w-full sm:max-w-max flex-wrap justify-center font-Poppins mx-auto">
           {HeroData.map((ls) => (
             <div key={ls.index} className="flex items-center gap-2 2xl:gap-3 ">
               {ls.icon}
-              <p className="text-[18px] 2xl:text-[20px]">{ls.text}</p>
+              <p className="text-[16px] 2xl:text-[18px]">{ls.text}</p>
             </div>
           ))}
         </div>
         <div onClick={() => (router.push('/services'))} className="max-w-max sm:mt-5 2xl:mt-0 w-full mx-auto">
-          <Button className="px-6 py-3 2xl:px-9 2xl:py-5 text-white font-semibold transition-all duration-200 hover:scale-105 cursor-pointer  bg-[#fc7344] rounded-[5px]">
-            <span>View Services</span>
+          <Button className="px-4 py-2 2xl:px-7 2xl:py-4 text-white font-semibold transition-all duration-200 hover:scale-105 cursor-pointer  bg-[#fc7344] rounded-[5px]">
+            <span className="text-[16px]">View Services</span>
           </Button>
         </div>
       </div>

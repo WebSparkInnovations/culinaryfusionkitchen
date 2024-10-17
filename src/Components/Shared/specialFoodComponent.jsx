@@ -22,7 +22,7 @@ const SpecialFoodComponent = ({ data }) => {
               </div>
             </div>
 
-            <div className="flex flex-col px-5 2xl:px-10 mx-auto w-full gap-5">
+            <div className={`flex flex-col max-w-[1200px]  py-3 px-5 2xl:px-10 mx-auto w-full gap-5 ${ls.heading && ls.description ? 'border-[#fc7344] border-[3px]' : ''}`}>
               {ls.heading && (<h1 className="text-[24px] xl:text-[32px] text-center font-semibold">
                 {ls.heading} {/* Changed from data.heading to ls.heading */}
               </h1>)}

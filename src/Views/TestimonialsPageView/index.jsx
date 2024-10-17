@@ -5,7 +5,7 @@ import ContactUs from '@/Components/Shared/ContactUs';
 
 const OfficeEventData = [
   {
-    bannerText: "About Us",
+    bannerText: "Testimonials",
     img: "/assets/images/testimonialbanner.jpg",
     heading: "Below are a few cherished testimonials from our cherished customers",
   },

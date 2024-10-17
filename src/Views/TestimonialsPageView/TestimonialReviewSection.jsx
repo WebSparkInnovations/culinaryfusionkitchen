@@ -17,21 +17,21 @@ const TestimonialReviewSection = () => {
     return (
         <div className='container'>
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-5'>
-            {TestimonialData.map((ls, index) => (
-                <div key={ls.id} className='rounded-[10px] flex items-center p-8 flex-col gap-5 bg-gray-200 border-[2px] border-grey-500'>
-                    <h1>
-                        {ls.heading}
-                    </h1>
-                    <p>
-                        {ls.description}
-                    </p>
-                    <p>
-                        - {ls.name}
-                    </p>
-                </div>
-            ))}
+                {TestimonialData.map((ls, index) => (
+                    <div key={ls.index} className='rounded-[10px] flex items-center p-8 flex-col gap-5 bg-[#FC7344] border-[2px] border-grey-500'>
+                        <h1 className='text-[20px] font-medium text-white'>
+                            {ls.heading}
+                        </h1>
+                        <p className='text-[16px] text-white'>
+                            {ls.description}
+                        </p>
+                        <p className='text-[16px] font-medium text-white'>
+                            - {ls.name}
+                        </p>
+                    </div>
+                ))}
 
-        </div>
+            </div>
         </div>
     )
 }

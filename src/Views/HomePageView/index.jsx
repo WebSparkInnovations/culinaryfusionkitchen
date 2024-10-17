@@ -9,7 +9,7 @@ import ContactUs from "@/Components/Shared/ContactUs";
 
 const Home = () => {
   return (
-    <div className="flex flex-col gap-7 md:gap-10 2xl:gap-14">
+    <div className="flex flex-col gap-5 md:gap-8 2xl:gap-12">
       <Slider />
       <DeliveryPartner />
       <AboutTeam />

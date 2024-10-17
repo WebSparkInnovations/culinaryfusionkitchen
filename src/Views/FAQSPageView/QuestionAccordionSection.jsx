@@ -1,5 +1,7 @@
 'use client';
 import React, { useState, useRef } from "react";
+import { FaArrowUpLong } from "react-icons/fa6";
+import { IoIosArrowDown } from "react-icons/io";
 
 const questionsData = [
   {
@@ -32,14 +34,14 @@ const AccordionItem = ({ question, answer, isOpen, toggleAccordion }) => {
   const contentRef = useRef(null);
 
   return (
-    <div className="border-b border-gray-200">
+    <div className="">
       <button
         onClick={toggleAccordion}
-        className="w-full flex justify-between items-center py-4 focus:outline-none"
+        className="w-full flex justify-between items-center px-4 bg-[#f8d8ce] py-4 focus:outline-none"
       >
         <span className="text-left text-lg font-semibold">{question}</span>
         <span className="text-xl">
-          {isOpen ? '▲' : '▼'}
+          {isOpen ? <FaArrowUpLong className="text-[#f9a68a]" /> : <IoIosArrowDown className="text-[#f9a68a]" />}
         </span>
       </button>
       <div
@@ -49,7 +51,7 @@ const AccordionItem = ({ question, answer, isOpen, toggleAccordion }) => {
           maxHeight: isOpen ? `${contentRef.current.scrollHeight}px` : '0px'
         }}
       >
-        <div className="pl-2 pr-5 py-3 text-gray-600">
+        <div className="p-10 bg-[#e9dcd8] text-gray-600">
           {answer}
         </div>
       </div>
@@ -70,7 +72,10 @@ const Accordion = () => {
 
   return (
     <div className="container mx-auto p-5">
-      <h2 className="text-2xl font-bold mb-5 text-center">Frequently Asked Questions</h2>
+ <div className="flex flex-col items-center gap-2 max-w-[400px] mx-auto w-full">
+  <h2 className="text-[18px] font-medium tracking-widest text-[#fc7344]">FAQS</h2>
+ <h2 className="text-2xl font-bold mb-8 text-center">Questions About the Menu or Service Check out down</h2>
+ </div>
       {questionsData.map((item, index) => (
         <AccordionItem
           key={index}

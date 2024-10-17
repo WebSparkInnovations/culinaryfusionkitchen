@@ -55,12 +55,12 @@ const Navbar = () => {
       <div className="container">
         <div className=" flex max-w-full items-center justify-between">
           <div className="flex gap-5 lg:gap-10 max-w-max py-3   w-full">
-            <div className="flex max-w-[65px] lg:max-w-[80px] w-full">
+            <div className="flex max-w-[55px] lg:max-w-[70px] w-full">
               <Image
                 className="w-full h-full object-cover"
                 src="/assets/images/logo.png"
-                width={90}
-                height={90}
+                width={80}
+                height={80}
                 alt="logo"
               />
             </div>
@@ -74,7 +74,7 @@ const Navbar = () => {
                 >
                   {/* Wrap the menu item in Link */}
                   <Link href={item.link}>
-                    <p className="text-[15px] md:text-[16px] xl:text-[18px]">
+                    <p className="text-[12px] md:text-[14px] xl:text-[16px]">
                       {item.text}
                     </p>
                   </Link>
@@ -84,7 +84,7 @@ const Navbar = () => {
           </div>
 
           <div className="md:flex hidden items-center gap-2 max-w-max xl:gap-4">
-            <Button className="py-3 px-5 rounded-[4px] text-white bg-[#fc7344]">
+            <Button className="py-[10px] text-[14px] px-5 rounded-[4px] text-white bg-[#fc7344]">
               Contact Us
             </Button>
           </div>
@@ -103,10 +103,7 @@ const Navbar = () => {
       >
         <div className="flex relative">
           <div className="font-Roboto text-[24px] text-orange-500 font-bold p-6 sm:text-[20px] md:text-[24px] lg:text-[26px]">
-            largerthan
-            <span className="font-Courgette font-normal text-[25px] sm:text-[24px] lg:text-[26px]">
-              i
-            </span>
+           Culinary Fusion Kitchen
           </div>
           <IoClose
             className="bg-white absolute right-5 top-8 md:right-6 md:top-10 cursor-pointer"
@@ -119,7 +116,7 @@ const Navbar = () => {
             <li className="py-3 border-b border-b-white lg:flex" key={item.id}>
               <a
                 href={item.link}
-                className="font-medium text-[20px] text-orange-500 md:flex"
+                className="font-medium text-[16px] text-orange-500 md:flex"
               >
                 {item.text}
               </a>
