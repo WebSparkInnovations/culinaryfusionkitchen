@@ -18,16 +18,15 @@ const ContactForm = () => {
     message: "",
   };
 
-  const handleSubmit = (values, { resetForm }) => {
+  const handleSubmit = (values) => {
     console.log("Form submitted with values:", values);
-    resetForm();
   };
 
   return (
     <div className="w-full">
       <Formik
         initialValues={initialValues}
-        validationSchema={validationSchema}
+        // validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
         {({ isSubmitting }) => (
