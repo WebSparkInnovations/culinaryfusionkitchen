@@ -16,7 +16,7 @@ const ServicesData = [
         icon: <GiHotMeal />,
         iconTitle: 'Meal Prep',
         description: 'Experience the convenience of our meal prep service, offering a variety of nutritious and delicious dishes ready to fuel your busy lifestyle. Each meal is thoughtfully crafted to ensure you enjoy flavorful, healthy eating without the hassle of cooking.',
-        link: '/officecatering'
+        link: '/meal'
     },
     {
         id: 2,
@@ -32,7 +32,7 @@ const ServicesData = [
         icon: <FaGlassCheers />,
         iconTitle: 'Parties',
         description: 'Make your next party unforgettable with our meal prep service, offering a wide selection of flavorful, chef-crafted dishes designed to delight your guests. From intimate gatherings to grand celebrations, we provide a seamless dining experience with ready-to-serve gourmet meals that cater to every palate.',
-        link: '/officecatering'
+        link: '/smallparties'
     },
     {
         id: 4,
@@ -40,7 +40,7 @@ const ServicesData = [
         icon: <FaGift />,
         iconTitle: 'Wedding',
         description: 'Celebrate your special day with our exquisite wedding meal prep service, featuring an array of gourmet dishes tailored to elevate your reception. With beautifully prepared, ready-to-serve meals, we ensure a memorable dining experience that complements the elegance and joy of your wedding celebration.',
-        link: '/officecatering'
+        link: '/weddings'
     },
     {
         id: 5,
@@ -48,7 +48,7 @@ const ServicesData = [
         icon: <GiMeal />,
         iconTitle: 'Buffet',
         description: 'Elevate your buffet experience with our expertly prepared meal prep service, offering a variety of mouthwatering dishes that cater to diverse tastes. Perfectly portioned and ready to serve, our gourmet selection ensures a seamless, flavorful feast for any occasion.',
-        link: '/officecatering'
+        link: '/buffets'
     },
     {
         id: 6,
@@ -56,7 +56,7 @@ const ServicesData = [
         icon: <FaGlassMartiniAlt />,
         iconTitle: 'Beverages',
         description: `Quench your guests' thirst with our refreshing beverage offerings, featuring a curated selection of signature drinks, juices, and mocktails. Whether it's a casual gathering or a formal event, our beverages are crafted to perfectly complement any occasion.`,
-        link: '/officecatering'
+        link: '/beverages'
     },
 
 ]

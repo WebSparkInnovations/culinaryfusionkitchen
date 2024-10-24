@@ -1,16 +1,17 @@
+'use client'
 import React from "react";
 import AboutTeam from "./AboutTeam";
 import DeliveryPartner from "./DeliveryPartnerView/DeliveryPartner";
 
 // import HomeSwiper from "../../Components/Sliders/HomeSwiper";
-import Slider from "../../Components/Sliders/HomeSwiper";
 import ContactUs from "@/Components/Shared/ContactUs";
+import HomeSlider from "../../Components/Sliders/HomeSwiper";
 
 
 const Home = () => {
   return (
-    <div className="flex flex-col gap-5 md:gap-8 2xl:gap-12">
-      <Slider />
+    <div className="flex flex-col">
+      <HomeSlider />
       <DeliveryPartner />
       <AboutTeam />
       <ContactUs />

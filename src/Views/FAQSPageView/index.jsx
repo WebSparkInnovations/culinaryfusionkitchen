@@ -10,7 +10,7 @@ const Faqs = () => {
   // Step 2: Automatically scroll to the Accordion section when the component mounts
   useEffect(() => {
     if (accordionRef.current) {
-      accordionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      accordionRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   }, []);
 

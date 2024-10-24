@@ -41,7 +41,7 @@ const AccordionItem = ({ question, answer, isOpen, toggleAccordion }) => {
       >
         <span className="text-left text-lg font-semibold">{question}</span>
         <span className="text-xl">
-          {isOpen ? <FaArrowUpLong className="text-[#f9a68a]" /> : <IoIosArrowDown className="text-[#f9a68a]" />}
+          {isOpen ? <FaArrowUpLong className="text-[#333333]" /> : <IoIosArrowDown className="text-[#333333]" />}
         </span>
       </button>
       <div

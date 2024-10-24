@@ -47,7 +47,7 @@ const Slider = () => {
   }, [images.length]);
 
   return (
-    <div className="relative h-[350px] lg:h-[400px] flex items-center justify-center overflow-hidden">
+    <div className="relative h-[350px] mb-10 lg:h-[400px] flex items-center justify-center overflow-hidden">
       {/* Background Image Container */}
       <div
         className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out ${isFading ? "opacity-100" : "opacity-30"
@@ -73,7 +73,7 @@ const Slider = () => {
         </div>
         <div onClick={() => (router.push('/services'))} className="max-w-max sm:mt-5 2xl:mt-0 w-full mx-auto">
           <Button className="px-4 py-2 2xl:px-7 2xl:py-4 text-white font-semibold transition-all duration-200 hover:scale-105 cursor-pointer  bg-[#fc7344] rounded-[5px]">
-            <span className="text-[16px]">View Services</span>
+            <span className="text-[14px] 2xl:text-[16px]">View Services</span>
           </Button>
         </div>
       </div>

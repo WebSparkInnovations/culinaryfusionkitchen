@@ -12,7 +12,7 @@ const FoodCard = ({ data }) => {
     router.push(route); // Navigate to the assigned route
   };
   return (
-    <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  mx-auto  py-5  gap-3 sm:gap-5  2xl:gap-10">
+    <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  mx-auto  py-5  gap-4 sm:gap-6  2xl:gap-10">
       {data?.map((ls, id) => (
         <div
           key={ls.id}
@@ -32,10 +32,10 @@ const FoodCard = ({ data }) => {
               onClick={() => handleClick(ls.route)}
               className="group flex py-5 px-3 xl:px-5 xl:py-7 items-center w-full gap-[2px]"
             >
-              <p className="font-Poppins text-[#fc7344] group-hover:text-[#e05f38] text-[16px]  font-semibold sm:text-[22px]">
+              <p className="font-Poppins text-[#fc7344] group-hover:text-[#e05f38] text-[18px] md:text-[20px]  font-semibold 2xl:text-[22px]">
                 {ls.service}
               </p>
-              <IoIosArrowRoundForward className="text-[#fc7344] group-hover:text-[#e05f38] w-10 h-10" />
+              <IoIosArrowRoundForward className="text-[#fc7344] group-hover:text-[#e05f38]  text-[32px]" />
             </div>
           </div>
         </div>

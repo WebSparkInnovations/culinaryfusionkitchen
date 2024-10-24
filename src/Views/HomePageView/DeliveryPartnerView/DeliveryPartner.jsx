@@ -9,15 +9,15 @@ import { useRouter } from "next/navigation";
 const DeliveryPartner = () => {
   const router = useRouter()
   return (
-    <div className="container">
-      <div className="flex  flex-col gap-5 2xl:gap-10">
+    <div className="container mb-10">
+      <div className="flex  flex-col  2xl:gap-10">
         <div className="flex flex-col  gap-3">
           <div className="border-b-[4px] max-w-max mx-auto border-[#fc7344]">
-            <p className="text-[20px] text-center  font-semibold text-[#fc7344]">
+            <p className="text-[18px] 2xl:text-[20px] text-center  font-semibold text-[#fc7344]">
               Our Special Food
             </p>
           </div>
-          <h1 className="font-Poppins text-[28px] text-center  xl:text-[42px] font-semibold">
+          <h1 className="font-Poppins text-[28px] sm:text-[32px] md:text-[36px] text-center font-semibold">
             Your Favourite Food Delivery Partner
           </h1>
         </div>
@@ -26,7 +26,7 @@ const DeliveryPartner = () => {
         </div>
 
         <div onClick={() => (router.push('/services'))} className="max-w-max w-full mx-auto">
-          <Button className="2xl:px-10 2xl:py-5 py-3 px-5 text-white font-semibold transition-all duration-200 hover:scale-105 cursor-pointer  bg-[#fc7344] rounded-[5px]">
+          <Button className="2xl:px-10 2xl:py-5 py-3 px-5 text-white font-semibold transition-all duration-200 hover:scale-105 cursor-pointer text-[16px] sm:text-[18px] 2xl:text-[20px]  bg-[#fc7344] rounded-[5px]">
             <span>See all our services</span>
           </Button>
         </div>

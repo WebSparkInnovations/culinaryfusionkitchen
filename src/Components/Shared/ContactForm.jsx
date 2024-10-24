@@ -26,25 +26,25 @@ const ContactForm = () => {
     <div className="w-full">
       <Formik
         initialValues={initialValues}
-        // validationSchema={validationSchema}
+        validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
         {({ isSubmitting }) => (
           <Form className="flex flex-col gap-7">
-            <div className="flex flex-col relative gap-7">
-              <div className="grid grid-col-1 sm:grid-cols-2 gap-4">
+            <div className="flex flex-col relative gap-5 lg:gap-7">
+              <div className="grid grid-col-1 sm:grid-cols-2 gap-5 lg:gap-2">
                 <div className="relative">
                   <Field
                     type="text"
                     id="name"
                     name="name"
-                    className="w-full p-4 border-[1px] rounded-2xl focus:outline-none focus:border-[#333333]"
+                    className="w-full p-[10px] border-[1px] rounded-[12px] focus:outline-none focus:border-[#333333]"
                     placeholder="Enter first name"
                   />
                   <ErrorMessage
                     name="name"
                     component="div"
-                    className="text-red-500 absolute text-[12px] left-3 mt-1"
+                    className="text-red-500 absolute text-[10px] left-3"
                   />
                 </div>
 
@@ -53,13 +53,13 @@ const ContactForm = () => {
                     type="text"
                     id="company"
                     name="company"
-                    className="w-full p-4 border-[1px] rounded-2xl focus:outline-none focus:border-[#333333]"
+                    className="w-full p-[10px] border-[1px] rounded-[12px]  focus:outline-none focus:border-[#333333]"
                     placeholder="Enter your company name"
                   />
                   <ErrorMessage
                     name="company"
                     component="div"
-                    className="text-red-500 absolute text-[12px] mt-1"
+                    className="text-red-500 absolute text-[10px] left-3"
                   />
                 </div>
               </div>
@@ -70,13 +70,13 @@ const ContactForm = () => {
                     type="phone"
                     id="phone"
                     name="phone"
-                    className="w-full p-4  border-[1px] rounded-2xl focus:outline-none focus:border-[#333333]"
+                    className="w-full p-[10px] border-[1px] rounded-[12px] focus:outline-none focus:border-[#333333]"
                     placeholder="Enter your phone number"
                   />
                   <ErrorMessage
                     name="phone"
                     component="div"
-                    className="text-red-500 absolute text-[12px]"
+                    className="text-red-500 absolute text-[10px] left-3"
                   />
                 </div>
                 <div className="relative">
@@ -84,13 +84,13 @@ const ContactForm = () => {
                     type="email"
                     id="email"
                     name="email"
-                    className="w-full p-4 border-[1px] rounded-2xl focus:outline-none focus:border-[#333333]"
+                    className="w-full p-[10px] border-[1px] rounded-[12px] focus:outline-none focus:border-[#333333]"
                     placeholder="Enter your email"
                   />
                   <ErrorMessage
                     name="email"
                     component="div"
-                    className="text-red-500 absolute text-[12px]"
+                    className="text-red-500 absolute text-[10px] left-3"
                   />
                 </div>
               </div>
@@ -100,13 +100,13 @@ const ContactForm = () => {
                   type="text"
                   id="event"
                   name="event"
-                  className="w-full p-4  border-[1px] rounded-2xl focus:outline-none focus:border-[#333333]"
+                  className="w-full p-[10px] border-[1px] rounded-[12px] focus:outline-none focus:border-[#333333]"
                   placeholder="Enter event type"
                 />
                 <ErrorMessage
                   name="event"
                   component="div"
-                  className="text-red-500 absolute text-[12px]"
+                  className="text-red-500 absolute text-[10px] left-3"
                 />
               </div>
 
@@ -116,13 +116,13 @@ const ContactForm = () => {
                     type="number"
                     id="guest"
                     name="guest"
-                    className="w-full p-4  border-[1px] rounded-2xl focus:outline-none focus:border-[#333333]"
+                    className="w-full p-[10px] border-[1px] rounded-[12px] focus:outline-none focus:border-[#333333]"
                     placeholder="Enter no. of guests"
                   />
                   <ErrorMessage
                     name="guest"
                     component="div"
-                    className="text-red-500 absolute text-[12px]"
+                    className="text-red-500 absolute text-[10px] left-3"
                   />
                 </div>
 
@@ -131,13 +131,13 @@ const ContactForm = () => {
                     type="date"
                     id="date"
                     name="date"
-                    className="w-full p-4  border-[1px] rounded-2xl focus:outline-none focus:border-[#333333]"
+                    className="w-full p-[10px] border-[1px] rounded-[12px] focus:outline-none focus:border-[#333333]"
                     placeholder="Select date"
                   />
                   <ErrorMessage
                     name="date"
                     component="div"
-                    className="text-red-500 absolute text-[12px]"
+                    className="text-red-500 absolute text-[10px] left-3"
                   />
                 </div>
               </div>
@@ -147,13 +147,13 @@ const ContactForm = () => {
                   type="text"
                   id="location"
                   name="location"
-                  className="w-full p-4  border-[1px] rounded-2xl focus:outline-none focus:border-[#333333]"
+                  className="w-full p-[10px] border-[1px] rounded-[12px] focus:outline-none focus:border-[#333333]"
                   placeholder="Enter location"
                 />
                 <ErrorMessage
                   name="location"
                   component="div"
-                  className="text-red-500 absolute text-[12px]"
+                  className="text-red-500 absolute text-[10px] left-3"
                 />
               </div>
 
@@ -163,13 +163,13 @@ const ContactForm = () => {
                   id="message"
                   name="message"
                   rows={4}
-                  className="w-full p-4 border-[1px] rounded-2xl focus:outline-none focus:border-[#333333]"
+                  className="w-full p-[10px] border-[1px] rounded-[12px] focus:outline-none focus:border-[#333333]"
                   placeholder="Enter Message here.."
                 />
                 <ErrorMessage
                   name="message"
                   component="div"
-                  className="text-red-500 absolute text-sm"
+                  className="text-red-500 absolute text-[10px] mb-3 left-3"
                 />
               </div>
             </div>
@@ -177,7 +177,7 @@ const ContactForm = () => {
             <div className="w-full">
               <Button
                 type="submit"
-                className="w-full py-4 bg-[#fc7344] text-white font-semibold text-center rounded-2xl"
+                className="w-full py-2 lg:py-4 bg-[#fc7344] text-white font-semibold text-center rounded-2xl"
                 disabled={isSubmitting}
               >
                 Submit

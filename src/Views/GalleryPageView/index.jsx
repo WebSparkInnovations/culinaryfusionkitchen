@@ -4,6 +4,7 @@ import ContactUs from '../HomePageView/ContactUs';
 
 
 
+
 const GalleryDate = [
   {
     bannerText: "Gallery",
@@ -15,7 +16,7 @@ const Gallery = () => {
   return (
     <div className='flex flex-col gap-10'>
       <SpecialFoodComponent data={GalleryDate} />
-      <ContactUs/>
+      <ContactUs />
     </div>
   )
 }
