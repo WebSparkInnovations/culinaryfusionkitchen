@@ -1,11 +1,12 @@
-import Image from "next/legacy/image";
-import Link from "next/link";
+'use client'
 import React from "react";
 import { IoLogoInstagram } from "react-icons/io5";
 import { FaTiktok } from "react-icons/fa";
 import { FaRegCopyright } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 const Footer = () => {
+  const router = useRouter()
 
   return (
     <div className="bg-[#fc7344] pt-7 xl:pt-10">
@@ -16,13 +17,12 @@ const Footer = () => {
         <div className="max-w-max flex gap-5 lg:gap-24 mx-auto">
           <div className="flex gap-1 2xl:gap-3 items-center max-w-max">
             <p className="text-[14px] md:text-[16px] 2xl:text-[20px] text-white">Instagram</p>
-            <IoLogoInstagram className="text-white text-[22px] 2xl:text-[28px]" />
+            <IoLogoInstagram onClick={(() => router.push('https://www.instagram.com/cfkdummy/'))} className="text-white text-[22px] 2xl:text-[28px] hover:cursor-pointer" />
 
           </div>
           <div className="flex gap-1 2xl:gap-3 max-w-max items-center">
             <p className="text-[14px] md:text-[16px] 2xl:text-[20px] text-white">Tiktok</p>
-            <FaTiktok className="text-white text-[20px] 2xl:text-[26px]" />
-
+            <FaTiktok onClick={(() => router.push('https://www.tiktok.com/@culinaryfusionkitchen?_t=8qrFanWFFGg&_r=1'))} className="text-white hover:cursor-pointer text-[20px] 2xl:text-[26px]" />
           </div>
         </div>
       </div>
