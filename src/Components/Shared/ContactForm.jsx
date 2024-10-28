@@ -5,6 +5,20 @@ import Button from "../UI/Button";
 import validationSchema from "../Validations";
 
 const ContactForm = () => {
+
+  const onSubmit = async (values) => {
+    const mailText = `Name: ${values.name}\n  Company: ${values.company}\n Email: ${values.email}  Event: ${values.event}\n  Guest: ${values.guest}\n  Date: ${values.date}\n  Location: ${values.location}\n  How: ${values.how}\n Message: ${values.message}\n`;
+    const response = await sendMail({
+      email: values.email,
+      subject: 'New Contact Us Form',
+      text: mailText,
+    });
+    if (response?.messageId) {
+      toast.success('Application Submitted Successfully.');
+    } else {
+      toast.error('Failed To send application.');
+    }
+  };
   const initialValues = {
     name: "",
     company: "",
@@ -27,7 +41,7 @@ const ContactForm = () => {
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
-        onSubmit={handleSubmit}
+        onSubmit={onSubmit}
       >
         {({ isSubmitting }) => (
           <Form className="flex flex-col gap-7">

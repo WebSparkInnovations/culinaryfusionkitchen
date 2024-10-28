@@ -1,11 +1,22 @@
-// components/Slider.js
-"use client";
-import React, { useEffect, useState } from "react";
+'use client'
+import React from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import { GiKnifeFork } from "react-icons/gi";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { RxPerson } from "react-icons/rx";
-import Button from "../UI/Button";
 import { useRouter } from "next/navigation";
+
+// Import required modules
+import { EffectFade, Navigation, Pagination, Autoplay } from 'swiper/modules';
+import Button from '../UI/Button';
+
 
 const HeroData = [
   {
@@ -21,64 +32,69 @@ const HeroData = [
     text: "Philadelphia",
   },
 ];
-
-const Slider = () => {
-  const router = useRouter()
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isFading, setIsFading] = useState(true);
-
-  // Array of background images
+export default function HeroSection() {
+  const router = useRouter();
+  // Define your images array
   const images = [
     "/assets/images/sliderbg1.jpg",
     "/assets/images/sliderbg2.jpg",
   ];
 
-  // Change image every 5 seconds and manage fade effect
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsFading(false);
-      setTimeout(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-        setIsFading(true);
-      }, 1000); // Duration of the fade-out effect
-    }, 5000); // Change background every 5 seconds
-
-    return () => clearInterval(interval); // Cleanup interval on component unmount
-  }, [images.length]);
-
   return (
-    <div className="relative h-[350px] mb-10 lg:h-[400px] flex items-center justify-center overflow-hidden">
-      {/* Background Image Container */}
-      <div
-        className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out ${isFading ? "opacity-100" : "opacity-30"
-          }`}
-        style={{ backgroundImage: `url(${images[currentIndex]})` }}
+    <div className="relative w-full">
+      {/* Swiper as background */}
+      <Swiper
+        spaceBetween={30}
+        effect="fade"
+        autoplay={{
+          delay: 6000, // Time between transitions in milliseconds
+          disableOnInteraction: false, // Continue autoplay after user interaction
+        }}
+        modules={[EffectFade, Navigation, Pagination, Autoplay]}
+        className="mySwiper"
+        style={{ height: '400px' }} // Set height for the swiper
       >
-        {/* Overlay Layer */}
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        {/* Map over images array to create Swiper slides */}
+        {images.map((src, index) => (
+          <SwiperSlide key={index}>
+            <img
+              src={src}
+              alt={`Slide ${index + 1}`}
+              style={{
+                height: '100%',    // Make image take full height of the slide
+                width: '100%',      // Make image take full width of the slide
+                objectFit: 'cover', // Ensures the image covers the slide area without distortion
+              }}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      {/* Overlay content */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center bg-black bg-opacity-50 z-10">
+        <div className="relative flex flex-col justify-between max-w-[700px] w-full gap-7 2xl:gap-10 text-center text-white z-10">
+          <h1 className="text-[30px] md:text-[38px] lg:text-[44px] 2xl:text-[55px] font-bold uppercase">
+            Culinary Fusion Kitchen
+          </h1>
+          <div className="flex gap-5 sm:gap-14 max-w-[300px] w-full sm:max-w-max flex-wrap justify-center font-Poppins mx-auto">
+            {HeroData.map((ls, index) => (
+              <div key={index} className="flex items-center gap-2 2xl:gap-3">
+                {ls.icon}
+                <p className="text-[16px] 2xl:text-[18px]">{ls.text}</p>
+              </div>
+            ))}
+          </div>
+          <div
+            onClick={() => router.push('/services')}
+            className="max-w-max sm:mt-5 2xl:mt-0 w-full mx-auto"
+          >
+            <Button className="px-4 py-2 2xl:px-7 2xl:py-4 text-white font-semibold transition-all duration-200 hover:scale-105 cursor-pointer bg-[#fc7344] rounded-[5px]">
+              <span className="text-[14px] 2xl:text-[16px]">View Services</span>
+            </Button>
+          </div>
+        </div>
       </div>
 
-      {/* Static Content on the Slide */}
-      <div className="relative flex flex-col justify-between max-w-[700px] w-full gap-7 2xl:gap-10  text-center text-white z-10">
-        <h1 className=" text-[30px] md:text-[38px] lg:text-[44px] 2xl:text-[55px] font-bold uppercase">
-          Culinary Fusion Kitchen
-        </h1>
-        <div className="flex gap-5 sm:gap-14 max-w-[300px] w-full sm:max-w-max flex-wrap justify-center font-Poppins mx-auto">
-          {HeroData.map((ls) => (
-            <div key={ls.index} className="flex items-center gap-2 2xl:gap-3 ">
-              {ls.icon}
-              <p className="text-[16px] 2xl:text-[18px]">{ls.text}</p>
-            </div>
-          ))}
-        </div>
-        <div onClick={() => (router.push('/services'))} className="max-w-max sm:mt-5 2xl:mt-0 w-full mx-auto">
-          <Button className="px-4 py-2 2xl:px-7 2xl:py-4 text-white font-semibold transition-all duration-200 hover:scale-105 cursor-pointer  bg-[#fc7344] rounded-[5px]">
-            <span className="text-[14px] 2xl:text-[16px]">View Services</span>
-          </Button>
-        </div>
-      </div>
     </div>
   );
-};
-
-export default Slider;
+}
