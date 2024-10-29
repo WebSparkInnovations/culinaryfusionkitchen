@@ -9,7 +9,7 @@ const ContactForm = () => {
 
   const onSubmit = async (values) => {
     const mailHtml = `
-      <h2>Contact Form Submission</h2>
+      <h2>Contact Form Submission Details</h2>
       <p><strong>Name:</strong> ${values.name}</p>
       <p><strong>Company:</strong> ${values.company}</p>
       <p><strong>Phone:</strong> ${values.phone}</p>

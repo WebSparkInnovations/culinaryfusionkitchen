@@ -1,11 +1,11 @@
 
-import ContactUs from '@/Views/HomePageView/ContactUs'
+import Contact from '@/Views/HomePageView/contact'
 import React from 'react'
 
 const page = () => {
     return (
         <div>
-            <ContactUs />
+            <Contact />
         </div>
     )
 }
