@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 const DeliveryPartner = () => {
   const router = useRouter()
   return (
-    <div className="container mb-10">
+    <div className="container my-10">
       <div className="flex  flex-col  2xl:gap-10">
         <div className="flex flex-col  gap-3">
           <div className="border-b-[4px] max-w-max mx-auto border-[#fc7344]">

@@ -3,20 +3,35 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import Button from "../UI/Button";
 import validationSchema from "../Validations";
+import { sendMail } from "@/lib/sendMail";
 
 const ContactForm = () => {
 
   const onSubmit = async (values) => {
-    const mailText = `Name: ${values.name}\n  Company: ${values.company}\n Email: ${values.email}  Event: ${values.event}\n  Guest: ${values.guest}\n  Date: ${values.date}\n  Location: ${values.location}\n  How: ${values.how}\n Message: ${values.message}\n`;
+    const mailHtml = `
+      <h2>Contact Form Submission</h2>
+      <p><strong>Name:</strong> ${values.name}</p>
+      <p><strong>Company:</strong> ${values.company}</p>
+      <p><strong>Phone:</strong> ${values.phone}</p>
+      <p><strong>Email:</strong> ${values.email}</p>
+      <p><strong>Event:</strong> ${values.event}</p>
+      <p><strong>Guest Count:</strong> ${values.guest}</p>
+      <p><strong>Date:</strong> ${values.date}</p>
+      <p><strong>Location:</strong> ${values.location}</p>
+      <p><strong>Message:</strong> ${values.message}</p>
+    `;
+
     const response = await sendMail({
       email: values.email,
-      subject: 'New Contact Us Form',
-      text: mailText,
+      subject: 'Data For Booking',
+      text: mailHtml.replace(/<[^>]*>?/gm, ''),  // Strip HTML for plain text
+      html: mailHtml
     });
+
     if (response?.messageId) {
-      toast.success('Application Submitted Successfully.');
+      alert('Application Submitted Successfully.');
     } else {
-      toast.error('Failed To send application.');
+      alert('Failed to send application.');
     }
   };
   const initialValues = {
@@ -28,22 +43,18 @@ const ContactForm = () => {
     guest: "",
     date: "",
     location: "",
-    how: "",
     message: "",
   };
 
-  const handleSubmit = (values) => {
-    console.log("Form submitted with values:", values);
-  };
 
   return (
     <div className="w-full">
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
-        onSubmit={onSubmit}
+      // onSubmit={onSubmit}
       >
-        {({ isSubmitting }) => (
+        {({ isSubmitting, values }) => (
           <Form className="flex flex-col gap-7">
             <div className="flex flex-col relative gap-5 lg:gap-7">
               <div className="grid grid-col-1 sm:grid-cols-2 gap-5 lg:gap-2">
@@ -155,22 +166,6 @@ const ContactForm = () => {
                   />
                 </div>
               </div>
-
-              <div className="relative">
-                <Field
-                  type="text"
-                  id="location"
-                  name="location"
-                  className="w-full p-[10px] border-[1px] rounded-[12px] focus:outline-none focus:border-[#333333]"
-                  placeholder="Enter location"
-                />
-                <ErrorMessage
-                  name="location"
-                  component="div"
-                  className="text-red-500 absolute text-[10px] left-3"
-                />
-              </div>
-
               <div className="relative">
                 <Field
                   as="textarea"
@@ -189,13 +184,14 @@ const ContactForm = () => {
             </div>
 
             <div className="w-full">
-              <Button
+              <button
                 type="submit"
+                onClick={() => { onSubmit(values) }}
                 className="w-full py-2 lg:py-4 bg-[#fc7344] text-white font-semibold text-center rounded-2xl"
                 disabled={isSubmitting}
               >
                 Submit
-              </Button>
+              </button>
             </div>
           </Form>
         )}

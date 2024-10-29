@@ -21,14 +21,16 @@ const SpecialFoodComponent = ({ data }) => {
                 </div>
               </div>
             </div>
-
             <div className={`flex flex-col max-w-[1200px]  py-3 px-5 2xl:px-10 mx-auto w-full gap-5 ${ls.heading && ls.description ? 'border-[#fc7344] border-[3px]' : ''}`}>
               {ls.heading && (<h1 className="text-[24px] xl:text-[32px] text-center font-semibold">
                 {ls.heading} {/* Changed from data.heading to ls.heading */}
               </h1>)}
-              {ls.description && (<p className="text-[14px] md:text-[16px] 2xl:text-[18px] text-center text-[#808080]">
-                {ls.description} {/* Changed from data.description to ls.description */}
-              </p>)}
+              {/* Conditionally render description only if it exists */}
+              {ls.description ? (
+                <p className="text-[14px] md:text-[16px] 2xl:text-[18px] text-center text-[#808080]">
+                  {ls.description}
+                </p>
+              ) : null}
             </div>
           </div>
         </div>

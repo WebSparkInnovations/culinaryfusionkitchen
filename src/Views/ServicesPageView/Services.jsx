@@ -64,7 +64,7 @@ const ServicesData = [
 const ServicesCategories = () => {
     return (
         <div className='container'>
-            <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5'>
                 {ServicesData?.map((ls, id) => (
                     <div key={ls.id} className='relative shadow-md group cursor-pointer rounded-[10px] flex flex-col overflow-hidden'>
                         {/* Image container with hover effect */}

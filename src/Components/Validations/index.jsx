@@ -21,7 +21,6 @@ const validationSchema = Yup.object({
     .required("Date is required")
     .min(new Date(), "Date cannot be in the past"),
   location: Yup.string().required("Location is required"),
-  how: Yup.string().required("How did you hear about us? is required"),
   message: Yup.string().max(500, "Message can be up to 500 characters").required('This field is required'),
 });
 

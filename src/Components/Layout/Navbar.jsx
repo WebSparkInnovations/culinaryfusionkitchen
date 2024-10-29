@@ -1,46 +1,19 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-// import SignInModal from "../UI/SignInModal";
-// import SearchModal from "../UI/SearchModal";
-// import CartModal from "../UI/CartModal";
 import Image from "next/legacy/image";
 import Button from "../UI/Button";
 import { FaBars } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
+  const router = useRouter();
   const [nav, setNav] = useState(false);
   const handleNav = () => {
     setNav(!nav);
   };
-  // const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
-  // const [isSignInOpen, setIsSignInOpen] = useState(false);
-  // const [isCartModalOpen, setIsCartModalOpen] = useState(false);
-  // const [isModal, setIsModal] = useState(false);
-  // const openSearchModal = () => {
-  //   setIsSearchModalOpen(true);
-  // };
-
-  // const closeSearchModal = () => {
-  //   setIsSearchModalOpen(false);
-  // };
-
-  // const openSignInModal = () => {
-  //   setIsSignInOpen(true);
-  // };
-
-  // const closeSignInModal = () => {
-  //   setIsSignInOpen(false);
-  // };
-
-  // const openCartModal = () => {
-  //   setIsCartModalOpen(true);
-  // };
-
-  // const closeCartModal = () => {
-  //   setIsCartModalOpen(false);
-  // };
+ 
   const navbarItems = [
     { id: 1, text: "Home", link: "/" },
     { id: 2, text: "Services", link: "/services" }, // Changed the link to "/products"
@@ -84,7 +57,7 @@ const Navbar = () => {
           </div>
 
           <div className="md:flex hidden items-center gap-2 max-w-max xl:gap-4">
-            <Button className="py-[10px] text-[14px] px-5 rounded-[4px] text-white bg-[#fc7344]">
+            <Button onClick={(() => router.push('/contact-us'))} className="py-[10px] text-[14px] px-5 rounded-[4px] text-white bg-[#fc7344]">
               Contact Us
             </Button>
           </div>
@@ -103,7 +76,7 @@ const Navbar = () => {
       >
         <div className="flex relative">
           <div className="font-Roboto text-[24px] text-orange-500 font-bold p-6 sm:text-[20px] md:text-[24px] lg:text-[26px]">
-           Culinary Fusion Kitchen
+            Culinary Fusion Kitchen
           </div>
           <IoClose
             className="bg-white absolute right-5 top-8 md:right-6 md:top-10 cursor-pointer"

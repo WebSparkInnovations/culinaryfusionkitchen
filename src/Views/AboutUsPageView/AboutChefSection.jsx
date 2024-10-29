@@ -4,25 +4,25 @@ import React from "react";
 import Button from "../../Components/UI/Button";
 
 const AboutChef = () => {
- 
+
   return (
-    <div className="bg-[#fc7344] py-20">
+    <div className="bg-[#fc7344] py-10 2xl:py-20">
       <div className="container">
-        <div className="flex  gap-28 items-center  max-w-max mx-auto xl:justify-between w-full">
-          <div className="flex flex-col max-w-[700px]   gap-5 xl:gap-7 w-full">
+        <div className="flex  flex-col-reverse lg:flex-row gap-7   lg:gap-[150px] xl:gap-[180px] items-center  lg:max-w-max mx-auto w-full">
+          <div className="flex flex-col  lg:max-w-[600px] 2xl::max-w-[700px]   gap-5 xl:gap-7 w-full">
             <div className="flex flex-col   gap-3 lg:gap-6">
-              <div className="max-w-max">
-              <h1 className="uppercase border-b-[5px] border-white text-white font-Poppins font-semibold text-[28px] md:text-[32px] xl:text-[42px]">
-                About Chef
-              </h1>
+              <div className="lg:max-w-max w-full">
+                <h1 className="uppercase border-b-[5px] border-white text-center text-white font-Poppins font-semibold text-[28px] md:text-[32px] xl:text-[42px]">
+                  About Chef
+                </h1>
               </div>
               <div className="flex flex-col  gap-2">
-                
+
                 <p className="font-Poppins text-[16px] xl:text-[18px] text-white text-center sm:text-start  xl:leading-7">
                   {" "}
                   Here are a few lines that highlight Chef Malik's abilities:
 
-"With a passion for culinary innovation and a keen eye for detail, Chef Malik elevates every dish to a masterpiece. His expertise in blending diverse flavors and crafting unique presentations showcases his unparalleled talent and dedication to the art of cuisine. Whether it's a gourmet dinner or a casual brunch, Chef Malik brings an unforgettable dining experience that delights the senses and leaves a lasting impression."
+                  "With a passion for culinary innovation and a keen eye for detail, Chef Malik elevates every dish to a masterpiece. His expertise in blending diverse flavors and crafting unique presentations showcases his unparalleled talent and dedication to the art of cuisine. Whether it's a gourmet dinner or a casual brunch, Chef Malik brings an unforgettable dining experience that delights the senses and leaves a lasting impression."
                 </p>
               </div>
             </div>
