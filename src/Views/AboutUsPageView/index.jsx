@@ -1,7 +1,7 @@
-import SpecialFoodComponent from '@/Components/Shared/specialFoodComponent'
 import React from 'react'
 import AboutChef from './AboutChefSection';
 import ContactUs from '@/Components/Shared/ContactUs';
+import AboutUsHero from '@/Components/Shared/aboutUsHeroComponent';
 
 
 const OfficeEventData = [
@@ -14,8 +14,8 @@ const OfficeEventData = [
 
 const AboutUs = () => {
   return (
-    <div className='flex flex-col gap-10'>
-      <SpecialFoodComponent data={OfficeEventData} />
+    <div className='flex flex-col'>
+      <AboutUsHero data={OfficeEventData} />
       <AboutChef />
       <ContactUs />
     </div>

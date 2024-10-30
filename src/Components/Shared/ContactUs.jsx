@@ -4,7 +4,7 @@ import ContactForm from "../../Components/Shared/ContactForm";
 
 const ContactUs = () => {
   return (
-    <div className="flex flex-col gap-5 ">
+    <div className="flex flex-col gap-5 pt-10 ">
       <div className="w-full flex flex-col gap-2 items-center ">
         <div className="border-b-[4px] max-w-max mx-auto border-[#fc7344]">
           <p className="text-[18px] 2xl:text-[20px] text-center font-semibold text-[#fc7344]">
