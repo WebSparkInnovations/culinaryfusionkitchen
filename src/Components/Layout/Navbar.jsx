@@ -43,7 +43,7 @@ const Navbar = () => {
               {navbarItems.map((item) => (
                 <li
                   key={item.id}
-                  className="flex xl:px-6 xl:py-3 transition-all duration-200 cursor-pointer hover:text-orange-400 hover:scale-105"
+                  className="flex xl:px-6 xl:py-3 transition-all duration-200 cursor-pointer hover:text-[#fc7344] hover:scale-105"
                 >
                   {/* Wrap the menu item in Link */}
                   <Link href={item.link}>
