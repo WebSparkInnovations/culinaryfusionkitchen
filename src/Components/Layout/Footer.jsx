@@ -15,14 +15,14 @@ const Footer = () => {
           <p className="text-[14px] md:text-[16px] 2xl:text-[20px] text-center text-white">Greater Philadelphia Area | 123.123.1000 | CulinaryfusionKitchen@gmail.com</p>
         </div>
         <div className="max-w-max flex gap-5 lg:gap-24 mx-auto">
-          <div className="flex gap-1 2xl:gap-3 items-center max-w-max">
+          <div onClick={() => window.open('https://www.instagram.com/cfkdummy/', '_blank', 'noopener,noreferrer')} className="flex hover:cursor-pointer gap-1 onClick={(() => router.push('https://www.instagram.com/cfkdummy/'))}2xl:gap-3 items-center max-w-max">
             <p className="text-[14px] md:text-[16px] 2xl:text-[20px] text-white">Instagram</p>
-            <IoLogoInstagram onClick={(() => router.push('https://www.instagram.com/cfkdummy/'))} className="text-white text-[22px] 2xl:text-[28px] hover:cursor-pointer" />
+            <IoLogoInstagram className="text-white text-[22px] 2xl:text-[28px] " />
 
           </div>
-          <div className="flex gap-1 2xl:gap-3 max-w-max items-center">
-            <p className="text-[14px] md:text-[16px] 2xl:text-[20px] text-white">Tiktok</p>
-            <FaTiktok onClick={(() => router.push('https://www.tiktok.com/@culinaryfusionkitchen?_t=8qrFanWFFGg&_r=1'))} className="text-white hover:cursor-pointer text-[20px] 2xl:text-[26px]" />
+          <div onClick={() => window.open('https://www.tiktok.com/@culinaryfusionkitchen?_t=8qrFanWFFGg&_r=1', '_blank', 'noopener,noreferrer')} className="flex gap-1 hover:cursor-pointer 2xl:gap-3 max-w-max items-center">
+            <p className="text-[14px] md:text-[16px]  2xl:text-[20px] text-white">Tiktok</p>
+            <FaTiktok className="text-white text-[20px] 2xl:text-[26px]" />
           </div>
         </div>
       </div>

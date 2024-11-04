@@ -13,7 +13,7 @@ const Navbar = () => {
   const handleNav = () => {
     setNav(!nav);
   };
- 
+
   const navbarItems = [
     { id: 1, text: "Home", link: "/" },
     { id: 2, text: "Services", link: "/services" }, // Changed the link to "/products"
@@ -28,7 +28,7 @@ const Navbar = () => {
       <div className="container">
         <div className=" flex max-w-full items-center justify-between">
           <div className="flex gap-5 lg:gap-10 max-w-max py-3   w-full">
-            <div className="flex max-w-[55px] lg:max-w-[70px] w-full">
+            <div onClick={(() => router.push('/'))} className="flex hover:cursor-pointer max-w-[55px] lg:max-w-[70px] w-full">
               <Image
                 className="w-full h-full object-cover"
                 src="/assets/images/logo.png"
@@ -89,13 +89,14 @@ const Navbar = () => {
             <li className="py-3 border-b border-b-white lg:flex" key={item.id}>
               <a
                 href={item.link}
-                className="font-medium text-[16px] text-orange-500 md:flex"
+                className="font-medium text-[16px] text-[#fc7344] md:flex"
               >
                 {item.text}
               </a>
             </li>
           ))}
         </ul>
+
       </div>
 
       {/* Overlay - Opens and closes with the sidebar */}
@@ -119,8 +120,19 @@ const Navbar = () => {
         </div>
 
         <div className="flex flex-col px-4">
-          <div className="font-Roboto text-[24px] text-orange-500 font-bold  py-10 sm:text-[20px] md:text-[24px] lg:text-[26px]">
-            Culinary Fusion Kitchen
+          <div className="flex  gap-5" >
+            <div onClick={(() => router.push('/'))} className="my-auto hover:cursor-pointer">
+              <Image
+                className="w-full h-full object-cover"
+                src="/assets/images/logo.png"
+                width={60}
+                height={60}
+                alt="logo"
+              />
+            </div>
+            <div className="text-[26px] text-[#fc7344] font-bold max-w-max   py-10">
+              Culinary Fusion Kitchen
+            </div>
           </div>
 
           <ul className="uppercase">
@@ -131,13 +143,18 @@ const Navbar = () => {
               >
                 <a
                   href={item.link}
-                  className="font-medium text-[20px] text-orange-500 md:flex"
+                  className="font-medium text-[20px] text-[#fc7344] md:flex"
                 >
                   {item.text}
                 </a>
               </li>
             ))}
           </ul>
+          <div className="max-w-max mt-7 mx-auto">
+            <Button onClick={(() => router.push('/contact-us'))} className="py-[14px] font-semibold text-[16px] px-7 rounded-[4px] text-white bg-[#fc7344]">
+              Contact Us
+            </Button>
+          </div>
         </div>
       </div>
 
