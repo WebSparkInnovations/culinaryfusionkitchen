@@ -69,8 +69,8 @@ const Navbar = () => {
       <div
         className={
           nav
-            ? "fixed left-0 top-0 w-[70%] h-full ease-in-out duration-500 border-r border-r-gray-900 bg-[#1D2130] z-50"
-            : "fixed -left-[100%] top-0 w-[70%] h-full ease-in-out duration-500 border-r border-r-gray-900 bg-[#1D2130] z-50"
+            ? "fixed left-0 top-0 w-[80%] h-full ease-in-out duration-500 border-r border-r-gray-900 bg-[#1D2130] z-50"
+            : "fixed -left-[100%] top-0 w-[80%] h-full ease-in-out duration-500 border-r border-r-gray-900 bg-[#1D2130] z-50"
         }
       >
         <div className="relative">
@@ -79,9 +79,20 @@ const Navbar = () => {
             onClick={() => setNav(false)}
           />
         </div>
-        <div className="flex flex-col px-4">
-          <div className="text-[20px] text-[#fc7344] font-bold max-w-max py-10">
+        <div className="flex flex-col gap-3 px-4">
+          <div className="flex flex-col gap-3 mt-10">
+          <div onClick={() => router.push('/')} className="flex hover:cursor-pointer max-w-[55px] lg:max-w-[70px] w-full">
+            <Image
+              className="w-full h-full object-cover"
+              src="/assets/images/logo.png"
+              width={80}
+              height={80}
+              alt="logo"
+            />
+          </div>
+          <div className="text-[24px] text-[#fc7344] font-bold max-w-max">
             Culinary Fusion Kitchen
+          </div>
           </div>
           <ul className="uppercase">
             {navbarItems.map((item) => (
@@ -93,7 +104,7 @@ const Navbar = () => {
                   router.push(item.link);
                 }}
               >
-                <span className="font-medium text-[20px] text-[#fc7344] md:flex cursor-pointer">
+                <span className="font-medium text-[18px] text-[#fc7344] md:flex cursor-pointer">
                   {item.text}
                 </span>
               </li>
