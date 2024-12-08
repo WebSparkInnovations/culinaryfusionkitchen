@@ -6,17 +6,17 @@ import Button from "../../Components/UI/Button";
 const AboutTeam = () => {
  
   return (
-    <div className="bg-[#fc7344] mb-10">
+    <div className="bg-[#fc7344]">
       <div className="container py-5">
         <div className="flex flex-col xl:flex-row gap-6 items-center xl:justify-between w-full">
-          <div className="2xl:max-w-[750px] flex flex-col  gap-5 xl:gap-7 w-full">
+          <div className="xl:max-w-[600px] flex flex-col  gap-5 xl:gap-7 w-full">
             <div className="flex flex-col items-center xl:items-start gap-2 2xl:gap-6 w-full">
-              <h1 className="uppercase border-b-[5px] border-[#fc7344] text-white font-Poppins font-semibold text-[28px] md:text-[32px] xl:text-[40px]">
+              <h1 className="uppercase border-b-[5px] border-[#fc7344] text-white font-Poppins font-semibold text-[28px] md:text-[30px] xl:text-[36px]">
                 About Our Team
               </h1>
               <div className="flex flex-col gap-2">
                 
-                <p className="font-Poppins text-[14px] text-white xl:text-[16px] text-center md:text-start  xl:leading-6">
+                <p className="text-[12px] text-white sm:text-[15px] text-center md:text-start  xl:leading-5">
                   {" "}
                   “Welcome to Culinary Fusion Kitchen, where culinary creativity
                   knows no bounds. Our catering company specializes in

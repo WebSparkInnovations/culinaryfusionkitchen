@@ -7,7 +7,7 @@ const ContactUs = () => {
     <div className="flex flex-col gap-5 ">
       <div className="w-full flex flex-col gap-2 items-center ">
         <div className="border-b-[4px] max-w-max mx-auto border-[#fc7344]">
-          <p className="text-[20px] text-center font-semibold text-[#fc7344]">
+          <p className="text-[16px] xl:text-[20px] text-center font-semibold text-[#fc7344]">
             Contact Us
           </p>
         </div>
@@ -19,7 +19,7 @@ const ContactUs = () => {
         </div>
       </div>
       <div
-        className="flex bg-cover mb-6"
+        className="flex bg-cover"
         style={{ backgroundImage: `url("assets/images/formimage.jpg")` }}
       >
         <div className="bg-black/40 relative flex w-full">

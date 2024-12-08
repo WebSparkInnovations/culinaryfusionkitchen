@@ -7,14 +7,14 @@ const OfficeEventData = [
   {
     bannerText: "Testimonials",
     img: "/assets/images/testimonialbanner.jpg",
-    heading: "Below are a few cherished testimonials from our cherished customers",
+    heading: "Below are a Few Cherished Testimonials from Our Cherished Customers",
   },
 ];
 
 
 const Testimonials = () => {
   return (
-    <div className='flex flex-col gap-10'>
+    <div className='flex flex-col gap-6 xl:gap-8'>
       <SpecialFoodComponent data={OfficeEventData} />
       <TestimonialReviewSection/>
       <ContactUs/>

@@ -78,20 +78,20 @@ const ServicesCategories = () => {
                             {/* Overlay div, hidden initially, appears on hover */}
                             <div className='absolute rounded-t-[10px] inset-0 bg-black bg-opacity-60 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-500'>
                                 <div className='text-white flex flex-col items-center text-center'>
-                                    <div className='text-4xl text-[#fc7344]'>
+                                    <div className='text-[22px] lg:text-3xl text-[#fc7344]'>
                                         {ls.icon}
                                     </div>
-                                    <h1 className='text-lg text-[#fc7344] font-bold'>{ls.iconTitle}</h1>
+                                    <h1 className='text-[12px] lg:text-[16px] text-[#fc7344] font-bold'>{ls.iconTitle}</h1>
                                 </div>
                             </div>
                         </div>
                         <div className='flex flex-col  flex-1 justify-between w-full   p-5'>
                             {/* Additional content */}
                             <div className='flex flex-col min-h-full gap-5 justify-between'>
-                                <p className='text-[16px] sm::text-[18px] text-gray-400'>{ls.description}</p>
+                                <p className='text-[14px] sm::text-[16px] text-gray-400'>{ls.description}</p>
                                 <Link href={ls.link}>
                                     <div className='max-w-[200px] w-full'>
-                                        <Button className='px-6 py-3 text-white font-semibold transition-all duration-200 hover:scale-105 cursor-pointer bg-[#fc7344] rounded-[5px]'>
+                                        <Button className='px-4 py-2 text-[14px] text-white font-semibold transition-all duration-200 hover:scale-105 cursor-pointer bg-[#fc7344] rounded-[5px]'>
                                             Learn More
                                         </Button>
                                     </div></Link>

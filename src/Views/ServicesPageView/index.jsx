@@ -14,7 +14,7 @@ const ServicesBannerData = [
 
 const Services = () => {
   return (
-    <div className='flex flex-col gap-10'>
+    <div className='flex flex-col gap-5 xl:gap-7'>
       <SpecialFoodComponent data={ServicesBannerData} />
       <ServicesCategories />
       <ContactUs />

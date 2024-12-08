@@ -28,7 +28,7 @@ const Navbar = () => {
       <div className="container">
         <div className="flex max-w-full items-center justify-between">
           <div className="flex gap-5 lg:gap-10 max-w-max py-3 w-full">
-            <div onClick={() => router.push('/')} className="flex hover:cursor-pointer max-w-[55px] lg:max-w-[70px] w-full">
+            <div onClick={() => router.push('/')} className="flex hover:cursor-pointer max-w-[45px] lg:max-w-[60px] w-full">
               <Image
                 className="w-full h-full object-cover"
                 src="/assets/images/logo.png"
@@ -46,7 +46,7 @@ const Navbar = () => {
                   className="flex xl:px-6 xl:py-3 transition-all duration-200 cursor-pointer hover:text-[#fc7344] hover:scale-105"
                 >
                   <Link href={item.link}>
-                    <p className="text-[12px] md:text-[14px] xl:text-[16px]">
+                    <p className="text-[12px] md:text-[14px]">
                       {item.text}
                     </p>
                   </Link>
@@ -54,8 +54,8 @@ const Navbar = () => {
               ))}
             </ul>
           </div>
-          <div className="md:flex hidden items-center gap-2 max-w-max xl:gap-4">
-            <Button onClick={() => router.push('/contact-us')} className="py-[10px] text-[14px] px-5 rounded-[4px] text-white bg-[#fc7344]">
+          <div className="md:flex hidden items-center gap-2 max-w-max xl:gap-3">
+            <Button onClick={() => router.push('/contact-us')} className="py-[8px] text-[12px] px-3 rounded-[4px] text-white bg-[#fc7344]">
               Contact Us
             </Button>
           </div>
@@ -81,7 +81,7 @@ const Navbar = () => {
         </div>
         <div className="flex flex-col gap-3 px-4">
           <div className="flex flex-col gap-3 mt-10">
-          <div onClick={() => router.push('/')} className="flex hover:cursor-pointer max-w-[55px] lg:max-w-[70px] w-full">
+          <div onClick={() => router.push('/')} className="flex hover:cursor-pointer max-w-[45px] lg:max-w-[60px] w-full">
             <Image
               className="w-full h-full object-cover"
               src="/assets/images/logo.png"
@@ -90,7 +90,7 @@ const Navbar = () => {
               alt="logo"
             />
           </div>
-          <div className="text-[24px] text-[#fc7344] font-bold max-w-max">
+          <div className="text-[22px] text-[#fc7344] font-bold max-w-max">
             Culinary Fusion Kitchen
           </div>
           </div>
@@ -104,7 +104,7 @@ const Navbar = () => {
                   router.push(item.link);
                 }}
               >
-                <span className="font-medium text-[18px] text-[#fc7344] md:flex cursor-pointer">
+                <span className="font-medium text-[16px] text-[#fc7344] md:flex cursor-pointer">
                   {item.text}
                 </span>
               </li>
@@ -114,7 +114,7 @@ const Navbar = () => {
             <Button onClick={() => {
               setNav(false);
               router.push('/contact-us');
-            }} className="sm:py-[14px] py-[10px] font-semibold text-[14px] sm:text-[16px] px-5 sm:px-7 rounded-[4px] text-white bg-[#fc7344]">
+            }} className="sm:py-[10px] py-[8px] font-semibold text-[14px] sm:text-[14px] px-3 sm:px-5 rounded-[4px] text-white bg-[#fc7344]">
               Contact Us
             </Button>
           </div>

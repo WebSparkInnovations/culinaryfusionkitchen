@@ -30,12 +30,12 @@ const FoodCard = ({ data }) => {
             </div>
             <div
               onClick={() => handleClick(ls.route)}
-              className="group flex py-5 px-3 xl:px-5 xl:py-7 items-center w-full gap-[2px]"
+              className="group flex py-4 px-[12px] xl:px-4 xl:py-6 items-center w-full gap-[2px]"
             >
-              <p className="font-Poppins text-[#fc7344] group-hover:text-[#e05f38] text-[18px] md:text-[20px]  font-semibold 2xl:text-[22px]">
+              <p className="font-Poppins text-[#fc7344] group-hover:text-[#e05f38] text-[18px]  font-semibold xl:text-[20px]">
                 {ls.service}
               </p>
-              <IoIosArrowRoundForward className="text-[#fc7344] group-hover:text-[#e05f38]  text-[32px]" />
+              <IoIosArrowRoundForward className="text-[#fc7344] group-hover:text-[#e05f38] mt-1  text-[28px]" />
             </div>
           </div>
         </div>

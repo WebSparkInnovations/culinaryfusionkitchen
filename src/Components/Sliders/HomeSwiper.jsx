@@ -52,7 +52,7 @@ export default function HeroSection() {
         }}
         modules={[EffectFade, Navigation, Pagination, Autoplay]}
         className="mySwiper"
-        style={{ height: '400px' }} // Set height for the swiper
+        style={{ height: '350px' }} // Set height for the swiper
       >
         {/* Map over images array to create Swiper slides */}
         {images.map((src, index) => (
@@ -72,15 +72,15 @@ export default function HeroSection() {
 
       {/* Overlay content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center bg-black bg-opacity-50 z-10">
-        <div className="relative flex flex-col justify-between max-w-[700px] w-full gap-7 2xl:gap-10 text-center text-white z-10">
-          <h1 className="text-[30px] md:text-[38px] lg:text-[44px] 2xl:text-[55px] font-bold uppercase">
+        <div className="relative flex flex-col justify-between max-w-[700px] w-full gap-5 2xl:gap-8 text-center text-white z-10">
+          <h1 className="text-[28px] md:text-[34px] lg:text-[40px] 2xl:text-[50px] font-bold uppercase">
             Culinary Fusion Kitchen
           </h1>
-          <div className="flex gap-5 sm:gap-14 max-w-[300px] w-full sm:max-w-max flex-wrap justify-center font-Poppins mx-auto">
+          <div className="flex gap-3 sm:gap-7 max-w-[300px] w-full sm:max-w-max flex-wrap justify-center font-Poppins mx-auto">
             {HeroData.map((ls, index) => (
               <div key={index} className="flex items-center gap-2 2xl:gap-3">
                 {ls.icon}
-                <p className="text-[16px] 2xl:text-[18px]">{ls.text}</p>
+                <p className="text-[13px] 2xl:text-[15px]">{ls.text}</p>
               </div>
             ))}
           </div>
@@ -88,8 +88,8 @@ export default function HeroSection() {
             onClick={() => router.push('/services')}
             className="max-w-max sm:mt-5 2xl:mt-0 w-full mx-auto"
           >
-            <Button className="px-4 py-2 2xl:px-7 2xl:py-4 text-white font-semibold transition-all duration-200 hover:scale-105 cursor-pointer bg-[#fc7344] rounded-[5px]">
-              <span className="text-[14px] 2xl:text-[16px]">View Services</span>
+            <Button className="px-4 pb-[10px] pt-[6px] xl:px-6 2xl:py-3 text-white font-semibold transition-all duration-200 hover:scale-105 cursor-pointer bg-[#fc7344] rounded-[5px]">
+              <span className="text-[12px] lg:text-[13px] 2xl:text-[14px]">View Services</span>
             </Button>
           </div>
         </div>

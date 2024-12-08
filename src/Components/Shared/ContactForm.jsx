@@ -63,7 +63,7 @@ const ContactForm = () => {
                     type="text"
                     id="name"
                     name="name"
-                    className="w-full p-[10px] border-[1px] rounded-[12px] focus:outline-none focus:border-[#333333]"
+                    className="w-full p-[10px] border-[1px] placeholder:text-[14px] rounded-[12px] focus:outline-none focus:border-[#333333]"
                     placeholder="Enter first name"
                   />
                   <ErrorMessage
@@ -78,7 +78,7 @@ const ContactForm = () => {
                     type="text"
                     id="company"
                     name="company"
-                    className="w-full p-[10px] border-[1px] rounded-[12px]  focus:outline-none focus:border-[#333333]"
+                    className="w-full p-[10px] border-[1px] rounded-[12px] placeholder:text-[14px]  focus:outline-none focus:border-[#333333]"
                     placeholder="Enter your company name"
                   />
                   <ErrorMessage
@@ -95,7 +95,7 @@ const ContactForm = () => {
                     type="phone"
                     id="phone"
                     name="phone"
-                    className="w-full p-[10px] border-[1px] rounded-[12px] focus:outline-none focus:border-[#333333]"
+                    className="w-full p-[10px] border-[1px] rounded-[12px] placeholder:text-[14px] focus:outline-none focus:border-[#333333]"
                     placeholder="Enter your phone number"
                   />
                   <ErrorMessage
@@ -109,7 +109,7 @@ const ContactForm = () => {
                     type="email"
                     id="email"
                     name="email"
-                    className="w-full p-[10px] border-[1px] rounded-[12px] focus:outline-none focus:border-[#333333]"
+                    className="w-full p-[10px] border-[1px] rounded-[12px] placeholder:text-[14px] focus:outline-none focus:border-[#333333]"
                     placeholder="Enter your email"
                   />
                   <ErrorMessage
@@ -125,7 +125,7 @@ const ContactForm = () => {
                   type="text"
                   id="event"
                   name="event"
-                  className="w-full p-[10px] border-[1px] rounded-[12px] focus:outline-none focus:border-[#333333]"
+                  className="w-full p-[10px] border-[1px] rounded-[12px] placeholder:text-[14px] focus:outline-none focus:border-[#333333]"
                   placeholder="Enter event type"
                 />
                 <ErrorMessage
@@ -141,7 +141,7 @@ const ContactForm = () => {
                     type="number"
                     id="guest"
                     name="guest"
-                    className="w-full p-[10px] border-[1px] rounded-[12px] focus:outline-none focus:border-[#333333]"
+                    className="w-full p-[10px] border-[1px] rounded-[12px] placeholder:text-[14px] focus:outline-none focus:border-[#333333]"
                     placeholder="Enter no. of guests"
                   />
                   <ErrorMessage
@@ -156,7 +156,7 @@ const ContactForm = () => {
                     type="date"
                     id="date"
                     name="date"
-                    className="w-full p-[10px] border-[1px] rounded-[12px] focus:outline-none focus:border-[#333333]"
+                    className="w-full p-[10px] border-[1px] rounded-[12px] placeholder:text-[14px] focus:outline-none focus:border-[#333333]"
                     placeholder="Select date"
                   />
                   <ErrorMessage
@@ -172,7 +172,7 @@ const ContactForm = () => {
                   id="message"
                   name="message"
                   rows={4}
-                  className="w-full p-[10px] border-[1px] rounded-[12px] focus:outline-none focus:border-[#333333]"
+                  className="w-full p-[10px] border-[1px] rounded-[12px] placeholder:text-[14px] focus:outline-none focus:border-[#333333]"
                   placeholder="Enter Message here.."
                 />
                 <ErrorMessage
@@ -183,11 +183,11 @@ const ContactForm = () => {
               </div>
             </div>
 
-            <div className="w-full">
+            <div className="w-full max-w-[200px] md:max-w-[250px] mx-auto">
               <button
                 type="submit"
                 onClick={() => { onSubmit(values) }}
-                className="w-full py-2 lg:py-4 bg-[#fc7344] text-white font-semibold text-center rounded-2xl"
+                className="w-full py-[10px] lg:py-3 bg-[#fc7344] text-white font-semibold text-center rounded-xl xl:rounded-2xl"
                 disabled={isSubmitting}
               >
                 Submit

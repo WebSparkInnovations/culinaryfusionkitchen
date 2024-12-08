@@ -18,14 +18,14 @@ const TestimonialReviewSection = () => {
         <div className='container'>
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-5'>
                 {TestimonialData.map((ls, index) => (
-                    <div key={ls.index} className='rounded-[10px] flex items-center p-8 flex-col gap-5 bg-[#FC7344] border-[2px] border-grey-500'>
+                    <div key={ls.index} className='rounded-[10px] flex items-center p-3 lg:p-6 flex-col gap-4 bg-[#FC7344] border-[2px] border-grey-500'>
                         <h1 className='text-[20px] font-medium text-white'>
                             {ls.heading}
                         </h1>
-                        <p className='text-[16px] text-white'>
+                        <p className='text-[14px] text-white'>
                             {ls.description}
                         </p>
-                        <p className='text-[16px] font-medium text-white'>
+                        <p className='text-[14px] font-medium text-white'>
                             - {ls.name}
                         </p>
                     </div>
