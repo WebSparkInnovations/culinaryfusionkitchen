@@ -13,7 +13,7 @@ const InstaPosts = () => {
         if (postUrls.length === 0) {
             const fetchInstagramPosts = async () => {
                 const ACCESS_TOKEN =
-                    'IGQWRNVzZAXTGpvVnhlRmZAMTWY1STAwZAkdQcU5lMDFhZADFZAbGJLVVg3WVZABdTVqbnF5NDY4R29vbk5NSEdOaDBBX3JrczlKSVN6VW94Yi1MRDFjUkdud1pSYTR3eXZAqOU50LW1keGlteG9oNzJnUlpMR1diRk0xbTQZD';
+                    'IGQWRQeHY2OVVuclN4WE9MUjFON1JONTdfeExSanhhRGZAjQWhjeE5JckJ2alZAvZAzVuenFRV05lR2tjLXMtWFdQcjRZAYlJfX3hJY2gyLWFKNnhTZAVJOMFVPLVJvRm5jQ2tnRUswVy1GVWlJSVg5Q09NbmptWEFqTnMZD';
                 try {
                     const response = await fetch(
                         `https://graph.instagram.com/me/media?fields=id,caption,media_type,permalink&access_token=${ACCESS_TOKEN}`
