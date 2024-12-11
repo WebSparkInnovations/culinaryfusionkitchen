@@ -19,7 +19,7 @@ const InstaPosts = () => {
                         `https://graph.instagram.com/me/media?fields=id,caption,media_type,permalink&access_token=${ACCESS_TOKEN}`
                     );
                     const data = await response.json();
-                    const urls = data.data.map(post => post.permalink);
+                    const urls = data.data.slice(0, 6).map(post => post.permalink);
                     setPostUrls(urls);
                 } catch (error) {
                     console.error('Error fetching Instagram posts:', error);
@@ -37,7 +37,7 @@ const InstaPosts = () => {
         <div className=' w-full grid container grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3'>
             {loading ? (
                 // Display a skeleton placeholder while loading
-                Array.from({ length: 8 }).map((_, index) => (
+                Array.from({ length: 6 }).map((_, index) => (
                     <div
                         key={index}
                         className="bg-gray-300 animate-pulse"
