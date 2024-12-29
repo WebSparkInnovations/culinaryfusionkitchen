@@ -49,7 +49,7 @@ const AboutChef = () => {
               alt="no-image"
             />
             <div className="max-w-max mx-auto flex gap-10 xl:gap-16">
-              <div className="group flex items-center justify-center bg-[#1a1a1a] p-3 rounded-lg hover:bg-[#2c2c2c] transition duration-300">
+              <div className="group flex items-center justify-center bg-white hover:cursor-pointer p-3 rounded-lg hover:bg-[#2c2c2c] transition duration-300">
                 <IoLogoInstagram
                   onClick={() => {
                     const newTab = window.open("", "_blank"); 
@@ -57,10 +57,10 @@ const AboutChef = () => {
                     newTab.location.href =
                       "https://www.instagram.com/cfkdummy/"; 
                   }}
-                  className="text-white group-hover:text-[#E1306C] text-[28px] 2xl:text-[36px] hover:cursor-pointer transition duration-300"
+                  className="text-[#fc7344] group-hover:text-[#E1306C] text-[28px] 2xl:text-[36px] hover:cursor-pointer transition duration-300"
                 />
               </div>
-              <div className="group flex items-center justify-center bg-[#1a1a1a] p-3 rounded-lg hover:bg-[#2c2c2c] transition duration-300">
+              <div className="group flex items-center justify-center bg-white hover:cursor-pointer p-3 rounded-lg hover:bg-[#2c2c2c] transition duration-300">
                 <FaTiktok
                   onClick={() => {
                     const newTab = window.open("", "_blank"); 
@@ -70,7 +70,7 @@ const AboutChef = () => {
                     newTab.location.href =
                       "https://www.tiktok.com/@culinaryfusionkitchen?_t=8qrFanWFFGg&_r=1"; 
                   }}
-                  className="text-white group-hover:text-[#69C9D0] text-[26px] 2xl:text-[34px] hover:cursor-pointer transition duration-300"
+                  className="text-[#fc7344] group-hover:text-[#69C9D0] text-[26px] 2xl:text-[34px] hover:cursor-pointer transition duration-300"
                 />
               </div>
             </div>

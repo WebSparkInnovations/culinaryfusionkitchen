@@ -6,14 +6,14 @@ const ContactUs = () => {
   return (
     <div className="flex flex-col gap-5 ">
       <div className="w-full flex flex-col gap-2 items-center ">
-        <div className="border-b-[4px] max-w-max mx-auto border-[#fc7344]">
-          <p className="text-[16px] xl:text-[20px] text-center font-semibold text-[#fc7344]">
+      <div className="border-b-[2px] max-w-max mx-auto border-[#fc7344]">
+      <p className="text-[14px] md:text-[16px] text-center font-semibold text-[#fc7344]">
             Contact Us
           </p>
         </div>
 
-        <div className="max-w-[1000px] w-full">
-          <h1 className="font-Poppins text-[28px] text-center  xl:text-[42px] font-semibold">
+        <div className="max-w-[800px] w-full px-2 lg:px-0">
+          <h1 className="font-Poppins text-[28px] md:text-[32px] text-center font-semibold">
             Please fill the form below and we will contact you within 24 hours
           </h1>
         </div>

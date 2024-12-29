@@ -26,7 +26,7 @@ const DeliveryPartner = () => {
         </div>
 
         <div onClick={() => (router.push('/services'))} className="max-w-max w-full mx-auto">
-          <Button className="xl:px-8 xl:py-4 py-[10px] px-4 text-white font-semibold transition-all duration-200 hover:scale-105 cursor-pointer text-[16px] sm:text-[18px] 2xl:text-[20px]  bg-[#fc7344] rounded-[5px]">
+          <Button className="px-4 xl:py-3 py-2 text-white font-semibold transition-all duration-200 hover:scale-105 cursor-pointer text-[16px]   bg-[#fc7344] rounded-[5px]">
             <span>See all our services</span>
           </Button>
         </div>

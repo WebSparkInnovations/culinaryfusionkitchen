@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { InstagramEmbed } from 'react-social-media-embed';
 
-const CARD_WIDTH = 400
+const CARD_WIDTH = 350
 
 const InstaPosts = () => {
     const [postUrls, setPostUrls] = useState([]);
@@ -34,7 +34,7 @@ const InstaPosts = () => {
     }, [postUrls]);
 
     return (
-        <div className=' w-full grid container grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3'>
+        <div className='w-full grid container grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3'>
             {loading ? (
                 // Display a skeleton placeholder while loading
                 Array.from({ length: 6 }).map((_, index) => (

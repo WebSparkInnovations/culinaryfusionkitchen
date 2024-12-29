@@ -13,6 +13,11 @@ const Navbar = () => {
   const handleNav = () => {
     setNav(!nav);
   };
+  const handleFAQClick = () => {
+    if (router.pathname === "/FAQ") {
+      router.reload();
+    }
+  };
 
   const navbarItems = [
     { id: 1, text: "Home", link: "/" },
@@ -28,7 +33,10 @@ const Navbar = () => {
       <div className="container">
         <div className="flex max-w-full items-center justify-between">
           <div className="flex gap-5 lg:gap-10 max-w-max py-3 w-full">
-            <div onClick={() => router.push('/')} className="flex hover:cursor-pointer max-w-[45px] lg:max-w-[60px] w-full">
+            <div
+              onClick={() => router.push("/")}
+              className="flex hover:cursor-pointer max-w-[45px] lg:max-w-[60px] w-full"
+            >
               <Image
                 className="w-full h-full object-cover"
                 src="/assets/images/logo.png"
@@ -45,17 +53,24 @@ const Navbar = () => {
                   key={item.id}
                   className="flex xl:px-6 xl:py-3 transition-all duration-200 cursor-pointer hover:text-[#fc7344] hover:scale-105"
                 >
-                  <Link href={item.link}>
-                    <p className="text-[12px] md:text-[14px]">
-                      {item.text}
-                    </p>
-                  </Link>
+                  {item.text === "FAQs" ? (
+                    <a onClick={handleFAQClick} href={item.link}>
+                      <p className="text-[12px] md:text-[14px]">{item.text}</p>
+                    </a>
+                  ) : (
+                    <Link href={item.link}>
+                      <p className="text-[12px] md:text-[14px]">{item.text}</p>
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
           </div>
           <div className="md:flex hidden items-center gap-2 max-w-max xl:gap-3">
-            <Button onClick={() => router.push('/contact-us')} className="py-[8px] text-[12px] px-3 rounded-[4px] text-white bg-[#fc7344]">
+            <Button
+              onClick={() => router.push("/contact-us")}
+              className="py-[8px] text-[12px] px-3 rounded-[4px] text-white bg-[#fc7344]"
+            >
               Contact Us
             </Button>
           </div>
@@ -81,18 +96,21 @@ const Navbar = () => {
         </div>
         <div className="flex flex-col gap-3 px-4">
           <div className="flex flex-col gap-3 mt-10">
-          <div onClick={() => router.push('/')} className="flex hover:cursor-pointer max-w-[45px] lg:max-w-[60px] w-full">
-            <Image
-              className="w-full h-full object-cover"
-              src="/assets/images/logo.png"
-              width={80}
-              height={80}
-              alt="logo"
-            />
-          </div>
-          <div className="text-[22px] text-[#fc7344] font-bold max-w-max">
-            Culinary Fusion Kitchen
-          </div>
+            <div
+              onClick={() => router.push("/")}
+              className="flex hover:cursor-pointer max-w-[45px] lg:max-w-[60px] w-full"
+            >
+              <Image
+                className="w-full h-full object-cover"
+                src="/assets/images/logo.png"
+                width={80}
+                height={80}
+                alt="logo"
+              />
+            </div>
+            <div className="text-[22px] text-[#fc7344] font-bold max-w-max">
+              Culinary Fusion Kitchen
+            </div>
           </div>
           <ul className="uppercase">
             {navbarItems.map((item) => (
@@ -111,10 +129,13 @@ const Navbar = () => {
             ))}
           </ul>
           <div className="max-w-max mt-7 mx-auto">
-            <Button onClick={() => {
-              setNav(false);
-              router.push('/contact-us');
-            }} className="sm:py-[10px] py-[8px] font-semibold text-[14px] sm:text-[14px] px-3 sm:px-5 rounded-[4px] text-white bg-[#fc7344]">
+            <Button
+              onClick={() => {
+                setNav(false);
+                router.push("/contact-us");
+              }}
+              className="sm:py-[10px] py-[8px] font-semibold text-[14px] sm:text-[14px] px-3 sm:px-5 rounded-[4px] text-white bg-[#fc7344]"
+            >
               Contact Us
             </Button>
           </div>
@@ -123,7 +144,9 @@ const Navbar = () => {
 
       {/* Overlay */}
       <div
-        className={`fixed inset-0 bg-black transition-opacity duration-300 ${nav ? "opacity-50 z-40" : "opacity-0 pointer-events-none"}`}
+        className={`fixed inset-0 bg-black transition-opacity duration-300 ${
+          nav ? "opacity-50 z-40" : "opacity-0 pointer-events-none"
+        }`}
         onClick={() => setNav(false)}
       ></div>
     </nav>
