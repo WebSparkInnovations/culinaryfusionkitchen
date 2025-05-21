@@ -3,33 +3,44 @@ import nodemailer from 'nodemailer';
 
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
-  port: 587,          // Use 465 if secure is true
-  secure: false,      // Use true for port 465 (SSL) and false for port 587 (TLS)
+  port: 587,          
+  secure: false,      
   auth: {
-    user: "muhammad.bil4l22@gmail.com",
-    pass: "abppdubqmdgdfzzy",
+    user: "cfkdummy@gmail.com", 
+    pass: "ofsklkujrmwpdizx",      
   },
 });
 
 export async function sendMail({
   email,
+  name,
   subject,
   text,
   html,
 }) {
   try {
-    const isVerified = await transporter.verify();
+    await transporter.verify();
+    console.log('SMTP Configuration Verified');
   } catch (error) {
-    console.error('Something Went Wrong', error);
-    return;
+    console.error('SMTP Verification Error:', error);
+    return { success: false, error: 'SMTP configuration failed: ' + error.message };
   }
-  const info = await transporter.sendMail({
-    from: email,
-    to: "balishah29@gmail.com",
-    subject: subject,
-    text: text,
-    html: html || '',
-  });
-  console.log('Message Sent', info.messageId);
-  return info;
+
+  try {
+    const fromAddress = `"${name || 'Booking Request'}" <cfkdummy@gmail.com>`;
+
+    const info = await transporter.sendMail({
+      from: fromAddress,
+      to: "cfkdummy@gmail.com",
+      subject,
+      text,
+      html: html || '',
+    });
+
+    console.log('Message Sent Successfully:', info.messageId);
+    return { success: true, messageId: info.messageId };
+  } catch (error) {
+    console.error('Error Sending Email:', error);
+    return { success: false, error: error.message || 'Failed to send email' };
+  }
 }
