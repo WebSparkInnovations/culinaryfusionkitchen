@@ -12,8 +12,7 @@ const InstaPosts = () => {
         // Fetch data only if postUrls is empty
         if (postUrls.length === 0) {
             const fetchInstagramPosts = async () => {
-                const ACCESS_TOKEN =
-                    'IGAAJmrXovC59BZAFA3MjdMdHRIQUxDOXlFU0JXcFVMYXpISjRBaEV0NXAzOFB2T1BsLTdfLTlZAX0llTnlkWGVLbll2czBrcXhIR0V6c3o1ZADFVQmtBMkU2YWdHVTFjVWpkR2lHeWR3ak5hTHhHdW9qUkhGZA0U5MG5KbF9ZAeVFwMAZDZD';
+                const ACCESS_TOKEN = process.env.NEXT_PUBLIC_INSTAGRAM_ACCESS_TOKEN;
                 try {
                     const response = await fetch(
                         `https://graph.instagram.com/me/media?fields=id,caption,media_type,permalink&access_token=${ACCESS_TOKEN}`

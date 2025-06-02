@@ -65,10 +65,35 @@ const ContactForm = () => {
     location: "",
     message: "",
   };
-  
 
   return (
     <div className="w-full">
+      <style>
+        {`
+          @keyframes dash-circle {
+            0% {
+              stroke-dashoffset: 125.6;
+            }
+            100% {
+              stroke-dashoffset: 0;
+            }
+          }
+          @keyframes dash-tick {
+            0% {
+              stroke-dashoffset: 28;
+            }
+            100% {
+              stroke-dashoffset: 0;
+            }
+          }
+          .animate-circle {
+            animation: dash-circle 0.8s ease-out forwards;
+          }
+          .animate-tick {
+            animation: dash-tick 0.4s 0.8s ease-out forwards;
+          }
+        `}
+      </style>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -81,6 +106,7 @@ const ContactForm = () => {
         {({ isSubmitting }) => (
           <Form className="flex flex-col gap-7">
             <div className="flex flex-col relative gap-5 lg:gap-7">
+              {/* Input Fields */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-2">
                 <div className="relative">
                   <Field
@@ -96,7 +122,6 @@ const ContactForm = () => {
                     className="text-red-500 absolute text-[10px] left-3"
                   />
                 </div>
-
                 <div className="relative">
                   <Field
                     type="text"
@@ -113,6 +138,7 @@ const ContactForm = () => {
                 </div>
               </div>
 
+              {/* More Input Fields */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-2">
                 <div className="relative">
                   <Field
@@ -174,7 +200,6 @@ const ContactForm = () => {
                     className="text-red-500 absolute text-[10px] left-3"
                   />
                 </div>
-
                 <div className="relative">
                   <Field
                     type="date"
@@ -198,7 +223,7 @@ const ContactForm = () => {
                   name="message"
                   rows={4}
                   className="w-full p-[8px] border-[1px] rounded-[12px] placeholder:text-[14px] focus:outline-none focus:border-[#333333]"
-                  placeholder="Enter Message here.."
+                  placeholder="Enter message here..."
                 />
                 <ErrorMessage
                   name="message"
@@ -208,10 +233,10 @@ const ContactForm = () => {
               </div>
             </div>
 
+            {/* Submission Status */}
             {submitted ? (
               <div className="flex flex-col items-center justify-center">
                 <div className="relative flex items-center justify-center">
-                  {/* Circle with Animation */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-16 w-16"
@@ -223,13 +248,12 @@ const ContactForm = () => {
                       r="20"
                       fill="none"
                       stroke="#4CAF50"
-                      strokeWidth="3" /* Match the thickness of the tick */
-                      strokeDasharray="125.6" /* Adjust for the smaller circle */
-                      strokeDashoffset="125.6" /* Initial offset for animation */
+                      strokeWidth="3"
+                      strokeDasharray="125.6"
+                      strokeDashoffset="125.6"
                       className="animate-circle"
                     />
                   </svg>
-                  {/* Tick Icon */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="absolute h-12 w-12 text-green-500"
@@ -239,11 +263,11 @@ const ContactForm = () => {
                       points="20 6 9 17 4 12"
                       fill="none"
                       stroke="#4CAF50"
-                      strokeWidth="2.5" /* Match the thickness of the circle */
+                      strokeWidth="2.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      strokeDasharray="28" /* Adjust tick path length */
-                      strokeDashoffset="28" /* Initial offset for animation */
+                      strokeDasharray="28"
+                      strokeDashoffset="28"
                       className="animate-tick"
                     />
                   </svg>
@@ -256,14 +280,14 @@ const ContactForm = () => {
                 </div>
               </div>
             ) : (
-              <div className="w-full max-w-[200px] mx-auto">
+              <div className="w-full max-w-[140px] mx-auto">
                 <button
                   type="submit"
                   className="w-full py-[8px] lg:py-2 bg-[#fc7344] text-white font-semibold text-center rounded-xl xl:rounded-2xl flex items-center justify-center gap-2"
                   disabled={isSubmitting || loading}
                 >
                   {loading && (
-                    <div className="loader border-white border-2 border-t-2 rounded-full h-4 w-4 animate-spin"></div>
+                    <div className="loader py-[10px]"></div>
                   )}
                   {!loading && "Submit"}
                 </button>

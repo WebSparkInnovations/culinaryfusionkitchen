@@ -65,3 +65,71 @@
   }
 }
 
+@keyframes circle-draw {
+  from {
+    stroke-dashoffset: 125.6;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes tick-draw {
+  from {
+    stroke-dashoffset: 28;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.circle-animation {
+  animation: circle-draw 1.5s ease-in-out forwards;
+}
+
+.tick-animation {
+  animation: tick-draw 0.5s 1.5s ease-in-out forwards;
+}
+@keyframes dash-circle {
+  0% {
+    stroke-dashoffset: 125.6;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash-tick {
+  0% {
+    stroke-dashoffset: 28;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-circle {
+  animation: dash-circle 0.8s ease-out forwards;
+}
+
+.animate-tick {
+  animation: dash-tick 0.4s 0.8s ease-out forwards;
+}
+
+.loader {
+  border: 3px solid transparent;
+  border-top-color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 0.8s linear infinite;
+}
